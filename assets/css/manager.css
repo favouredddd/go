@@ -1,0 +1,46 @@
+.managers {
+	background-color: #fdb702;
+	margin-left: 50px;
+	margin-top: 30px;
+	width: 160px;
+	display: flex;
+	justify-content: space-around;
+	border: 1px solid #f0f0f0;
+	border-radius: 5px;
+	padding: 6px 0px;
+	margin-bottom: 20px;
+	box-shadow: 1px 1px 10px rgba(22, 22, 22, .1);
+}
+.managers .active {
+	color: #66ffe7 !important;
+}
+.managers .link {
+	cursor: pointer;
+	border-radius: 5px;
+	text-align: center;
+	color: #fff;
+	background-color: #fdb702;
+	width: 70px;
+	list-style: none;
+}
+.managers .link .name {
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 30px;
+	height: 30px;
+}
+.canvasS {
+	box-shadow: 2px 2px 10px rgba(25, 25, 25, .2);
+	background-color: #fff;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	margin: 0px 50px;
+}
+@media screen and (max-width: 800px) {
+	.canvasS {
+		margin: 0 1.5rem !important;
+	}
+	.managers {
+		margin: 1rem 1.5rem !important;
+	}
+}

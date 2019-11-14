@@ -1,0 +1,22 @@
+@media screen and (max-width: 800px) {
+	.wrap {
+		margin: 0 auto !important;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 20rem !important;
+	}
+	.list {
+		padding: 20px !important;
+		margin-right: 0px;
+		width: calc(190px - 2px) !important;
+		margin: 20px auto;
+	}
+	.audio {
+		float: none !important;
+		margin: 0 auto;
+	}
+	audio {
+		width: 300px;
+	}
+}
