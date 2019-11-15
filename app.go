@@ -6,12 +6,18 @@ import (
 	"log"
 	"regexp"
 	"./upload"
-	"./chan"
 )
+type Func func(w http.ResponseWriter, r *http.Request)
+func (f Func) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	f(w,r);
+}
+
 func main() {
+	var myhanler=Func(Route);
 	http.Handle("/assets/",http.FileServer(http.Dir("/Users/jurrychen/Desktop/person/go/goserver")))
-	http.HandleFunc("/",Route);
-    http.ListenAndServe(":8888", nil)
+	http.Handle("/",myhanler);
+	http.ListenAndServe(":8888", nil)
+	MyTest();
 }
 type routeInfo struct {
     pattern string                                       // 正则表达式
@@ -57,4 +63,22 @@ func NotFoundHandler(w http.ResponseWriter, r *http.Request) {
         log.Println(err)
 	}
     t.Execute(w, nil)
+}
+func MyTest(){
+// 	ch:=make(chan int,1);
+// 	go func () {
+// 		log.Println(<-ch);
+// 		var total int;
+// 		total=0;
+// 		log.Println("开始计算")
+// 		for i:=0;i<10000;i++{
+// 			total=total+i;
+// 		}
+// 		log.Println(total)
+// 		ch <- total;
+// 	}()
+// 	ch<-1;
+// 	log.Println("传输完毕")
+// 	total:=<- ch;
+// 	log.Println("start",total)
 }
