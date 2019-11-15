@@ -7,8 +7,8 @@ import (
 	"regexp"
 	"./upload"
 )
-type Func func(w http.ResponseWriter, r *http.Request)
-func (f Func) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+type Compose func(w http.ResponseWriter, r *http.Request)
+func (f Compose) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	f(w,r);
 }
 
